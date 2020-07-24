@@ -6,7 +6,7 @@ import patterns.singleton.Singleton;
 public class Executor {
     public static void start() {
         printBuilder();
-        printSingleton();
+        printEqualsSingleton();
     }
 
     private static void printBuilder() {
@@ -18,8 +18,9 @@ public class Executor {
         System.out.println(user.toString());
     }
 
-    private static void printSingleton() {
+    private static void printEqualsSingleton() {
         Singleton singleton = Singleton.getInstance();
-        System.out.println(singleton.getClass());
+        Singleton singletonTwo = Singleton.getInstance();
+        System.out.println(singleton.equals(singletonTwo));
     }
 }
